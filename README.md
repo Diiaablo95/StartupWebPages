@@ -17,3 +17,13 @@ To start enjoying the HUGE benefits of the script, perform the following steps:
 5. Run `sudo launchctl load YOUR_IDENTIFIER.plist` where `YOUR_IDENTIFIER` is the identifier chosen at point 1.
 
 That's it, you can now enjoy your Twitter feed at Mac startup instead of opening it at every browser launch! If you need to update the list of websites to open, just update `websites.txt`.
+
+## If you use Google Chrome
+
+If your default browser is Google Chrome, the script will work fine. The only detail is that Google Chrome will open such tabs with the last used user. If you want to open the pages always with the same user, there are a few additional steps involved.
+
+1. Navigate to `~/Library/Application Support/Google/Chrome`. Each user will have its own folder named `Profile N`, where N is an integer number. You can understand which account is which from the info enclosed within the folder, especially the avatar image which can be found in `Accounts/Avatar Images`, if any.
+
+2. After identifying the designated profile that will be used, change the actual script to: `/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome $(< <PATH_TO_SCRIPT_DIRECTORY>/websites.txt) --args --profile-directory="Profile N"`
+
+**Et voilà!**
